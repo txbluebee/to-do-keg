@@ -1,0 +1,29 @@
+<button class="btn btn-success" (click)='showNewKegForm = !showNewKegForm'>New Keg</button>
+
+<div *ngIf="showNewKegForm" class="mt-4">
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Name:</label>
+    <div class="col-sm-5">
+      <input #newName>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Brand:</label>
+    <div class="col-sm-5">
+      <input #newBrand>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Price:</label>
+    <div class="col-sm-5">
+      <input #newPrice>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Flavor:</label>
+    <div class="col-sm-5">
+      <input #newFlavor>
+    </div>
+  </div>
+  <button class="btn-primary" (click)="submitForm(newName.value, newBrand.value, newPrice.value, newFlavor.value)">Add</button>
+</div>

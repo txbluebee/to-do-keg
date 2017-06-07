@@ -1,0 +1,11 @@
+<div>
+    <div *ngIf="selectedKeg">
+      <h3>{{selectedTask.description}}</h3>
+      <p>Task Complete? {{selectedTask.done}}</p>
+      <hr>
+      <h3>Edit Task</h3>
+      <label>Enter Task Description:</label>
+      <input [(ngModel)]="selectedTask.description">
+      <button (click)="finishedEditing()">Done</button>
+    </div>
+  </div>
