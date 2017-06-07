@@ -7,6 +7,10 @@ import { Keg } from '../keg.model';
   styleUrls: ['./keg-edit.component.css']
 })
 export class KegEditComponent {
+  @Input() selectedKeg: Keg;
+  @Output() finishEditingSender = new EventEmitter();
 
-
+  finishedEditing(){
+    this.finishEditingSender.emit();
+  }
 }

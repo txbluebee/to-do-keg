@@ -7,8 +7,8 @@
       <app-new-keg (newKegSender)='addKeg($event)'></app-new-keg>
     </div>
     <div class="col-sm-6">
-      <app-keg-list [childKegList]='masterKegList'></app-keg-list>
+      <app-keg-list [kegList]='kegList' (kegSender)="editKeg($event)"></app-keg-list>
     </div>
   </div>
-  <app-keg-edit></app-keg-edit>
+  <app-keg-edit [selectedKeg]="selectedKeg" (finishEditingSender)="finishedEditing()"></app-keg-edit>
 </div>

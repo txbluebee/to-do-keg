@@ -7,13 +7,21 @@ import { Keg } from './keg.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  selectedTask = null;
+  selectedKeg = null;
 
-  masterKegList: Keg[] = [
+  kegList: Keg[] = [
     new Keg('Spirit','coke', 15, 'straberry')
   ];
 
   addKeg(newKegFromChild: Keg){
-    this.masterKegList.push(newKegFromChild);
+    this.kegList.push(newKegFromChild);
+  }
+
+  editKeg(kegToEdit: Keg){
+    this.selectedKeg = kegToEdit;
+  }
+
+  finishedEditing(){
+    this.selectedKeg = null;
   }
 }

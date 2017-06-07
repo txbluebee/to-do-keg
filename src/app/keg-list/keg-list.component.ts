@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Keg } from '../keg.model';
 
 @Component({
@@ -8,7 +8,10 @@ import { Keg } from '../keg.model';
 })
 
 export class KegListComponent {
-  @Input() childKegList: Keg[];
+  @Input() kegList: Keg[];
+  @Output() kegSender = new EventEmitter();
 
-
+  editKeg(keg: Keg){
+    this.kegSender.emit(keg);
+  }
 }

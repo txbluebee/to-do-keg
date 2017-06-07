@@ -1,7 +1,7 @@
-<div *ngFor='let keg of childKegList'>
+<div *ngFor='let keg of kegList'>
   <h1>Name: {{ keg.name }}</h1>
   <p>Brand: {{ keg.brand }}</p>
   <p>Price: ${{ keg.price }}</p>
   <p>Flavor: {{ keg.flavor }}</p>
-  <button class='btn btn-danger'>Edit Keg</button>
+  <button class='btn btn-danger' (click)="editKeg(keg)">Edit Keg</button>
 </div>

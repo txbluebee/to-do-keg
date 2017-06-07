@@ -1,11 +1,28 @@
-<div>
-    <div *ngIf="selectedKeg">
-      <h3>{{selectedTask.description}}</h3>
-      <p>Task Complete? {{selectedTask.done}}</p>
-      <hr>
-      <h3>Edit Task</h3>
-      <label>Enter Task Description:</label>
-      <input [(ngModel)]="selectedTask.description">
-      <button (click)="finishedEditing()">Done</button>
+<div *ngIf="selectedKeg">
+  <h2>Update Keg</h2>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Name:</label>
+    <div class="col-sm-5">
+      <input class="form-control" [(ngModel)]="selectedKeg.name">
     </div>
   </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Brand:</label>
+    <div class="col-sm-5">
+      <input class="form-control" [(ngModel)]="selectedKeg.brand">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Price:</label>
+    <div class="col-sm-5">
+      <input class="form-control" [(ngModel)]="selectedKeg.price">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Flavor:</label>
+    <div class="col-sm-5">
+      <input class="form-control" [(ngModel)]="selectedKeg.flavor">
+    </div>
+  </div>
+  <button class="btn-primary" (click)="finishedEditing()">Add</button>
+</div>
